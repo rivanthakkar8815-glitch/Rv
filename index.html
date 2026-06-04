@@ -393,6 +393,9 @@ Made with ❤️ for Vidhi
 
 <!-- Confetti Script -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+
 // Birthday Countdown
 const birthday = new Date("June 12, 2026 00:00:00").getTime();
 
@@ -409,12 +412,50 @@ const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 if(distance > 0){
 document.getElementById("countdown").innerHTML =
 `💖 Only ${days} Days ${hours} Hours ${minutes} Minutes ${seconds} Seconds left until Vidhi's Birthday 🎂`;
-}
-else{
+}else{
 document.getElementById("countdown").innerHTML =
 "🎉 Happy Birthday Vidhi 🎂💖";
 }
+
 },1000);
+
+function blowCandle(){
+
+document.getElementById("flame").style.display="none";
+
+confetti({
+particleCount:300,
+spread:180,
+origin:{y:0.6}
+});
+
+setTimeout(()=>{
+alert("✨ Wish Granted! Happy Birthday Vidhi 🎂💖");
+},500);
+}
+
+function showSurprise(){
+
+document.getElementById("surprise").style.display="block";
+
+confetti({
+particleCount:500,
+spread:200
+});
+}
+
+setInterval(()=>{
+confetti({
+particleCount:100,
+spread:100,
+origin:{
+x:Math.random(),
+y:Math.random()-0.2
+}
+});
+},4000);
+
+</script>
 <script>
 
 function blowCandle(){
